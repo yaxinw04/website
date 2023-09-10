@@ -1,38 +1,130 @@
-.App {
-  text-align: center;
+@import url("https://fonts.googleapis.com/css2?family=Oswald&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans&display=swap");
+
+@import url("https://fonts.googleapis.com/css2?family=Montserrat&display=swap");
+
+body,
+html {
+  background-color: #aac7d8; /* Pastel pink */
+  height: 100%; /* Ensure it covers full viewport height */
+  margin: 0; /* Resetting default margin */
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.navbar a {
+  text-decoration: none;
+  color: #dfebf6; /* or another color of your choice */
+  margin: 0 15px; /* some spacing between links */
+  font-family: "Open Sans";
+  font-weight: 50;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.navbar {
+  position: fixed; /* this will keep the navbar at the top when scrolling */
+  top: 0; /* position it at the top */
+  left: 0; /* stretch it from the left edge */
+  width: 100%; /* ensure it stretches across the whole width */
+  background-color: #44576d; /* a sample color, change to what you prefer */
+  padding: 10px 0; /* some vertical padding for aesthetics */
+  text-align: center; /* centers the links */
+  z-index: 1000; /* ensures the navbar stays above other elements */
+  font-family: "Oswald";
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+body {
+  padding-top: 60px; /* Adjust based on the height of your navbar */
+}
+
+.homepage {
+  color: #29353c;
+  font-family: "Montserrat";
+  font-weight: 400;
+}
+
+h1 {
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  padding-left: 50px;
+  padding-top: 20px;
+  align-items: center; /* vertical centering */
+  height: 50px; /* specify a height */
+  /* text-align: center; */
+  font-size: larger;
+  font-family: "Montserrat";
+  font-weight: bold;
+  font-size: x-large;
 }
 
-.App-link {
-  color: #61dafb;
+h2 {
+  display: flex;
+  justify-content: center; /* horizontal centering */
+  align-items: center; /* vertical centering */
+  height: 50px; /* specify a height */
+  text-align: center;
+  font-size: xx-large;
+  font-style: oblique;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.homeheader {
+}
+
+p:first-of-type {
+  font-family: "Open Sans";
+  font-size: large;
+  font-weight: 50;
+}
+
+.container {
+  display: flex;
+  align-items: flex-start;
+}
+
+.text-block {
+  display: flex;
+  flex: 1; /* take up 50% of the space */
+  padding-left: 50px;
+  padding-right: 20px;
+}
+
+.image-block {
+  display: flex;
+  flex: 1; /* take up the remaining 50% of the space */
+  padding-right: 0px;
+  padding-left: 5px;
+  margin-top: 0%;
+}
+
+.image-block img {
+  width: 80%; /* make the image take up the full width of its parent */
+  height: auto; /* maintain image aspect ratio */
+}
+
+.image-banner {
+  display: flex;
+  justify-content: center; /* Distributes space equally between images */
+  align-items: center; /* Vertically aligns the images in case they have different heights */
+  padding-top: 10%; /* Some padding at the top and bottom of the banner for spacing */
+}
+
+.image-banner img {
+  width: auto;
+  height: 200px; /* Adjust as needed */
+  margin: 0; /* Some space between the images */
+  object-fit: cover; /* This ensures the image covers the entire container without warping its aspect ratio */
+  object-position: center; /* Ensures the image remains centered */
+}
+
+/* PORTFOLIO PAGE CSS */
+
+.portfolio-section {
+  padding: 0 20px;
+}
+.projects {
+  border: 2px solid #333; /* This is a dark border, you can change the color to your preference */
+  padding: 16px; /* This adds some space between your content and the border */
+  margin: 16px 0; /* This adds some space between each project */
+  border-radius: 8px; /* This makes the borders slightly rounded. You can adjust the value or remove it if you prefer square borders */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* This gives a slight shadow */
+  transition: box-shadow 0.3s ease; /* This is for a hover effect below */
+}
+.bcigaming:hover {
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15); /* This increases the shadow a bit when you hover over a project */
 }
