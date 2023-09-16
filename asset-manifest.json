@@ -1,19 +1,19 @@
 {
   "files": {
-    "main.css": "/static/css/main.ed1616ad.css",
-    "main.js": "/static/js/main.7968c8da.js",
-    "static/js/787.fb771931.chunk.js": "/static/js/787.fb771931.chunk.js",
-    "static/media/tumblr__3930b9c4_540.gif": "/static/media/tumblr_2aa04899864650d2ab3c08c29a811cf4_3930b9c4_540.27c591d17f26c06a143a.gif",
-    "static/media/Screenshot_20230217_010345.png": "/static/media/Screenshot_20230217_010345.e28951a79da74c637dfc.png",
-    "static/media/Screenshot 2023-09-10 181149.png": "/static/media/Screenshot 2023-09-10 181149.f248b858c39f9417155f.png",
-    "static/media/Screenshot_20230217_010206.png": "/static/media/Screenshot_20230217_010206.d568d434bc6252500194.png",
-    "index.html": "/index.html",
-    "main.ed1616ad.css.map": "/static/css/main.ed1616ad.css.map",
-    "main.7968c8da.js.map": "/static/js/main.7968c8da.js.map",
-    "787.fb771931.chunk.js.map": "/static/js/787.fb771931.chunk.js.map"
+    "main.css": "/website/static/css/main.ed1616ad.css",
+    "main.js": "/website/static/js/main.47d61146.js",
+    "static/js/787.fb771931.chunk.js": "/website/static/js/787.fb771931.chunk.js",
+    "static/media/tumblr__3930b9c4_540.gif": "/website/static/media/tumblr_2aa04899864650d2ab3c08c29a811cf4_3930b9c4_540.27c591d17f26c06a143a.gif",
+    "static/media/Screenshot_20230217_010345.png": "/website/static/media/Screenshot_20230217_010345.e28951a79da74c637dfc.png",
+    "static/media/Screenshot 2023-09-10 181149.png": "/website/static/media/Screenshot 2023-09-10 181149.f248b858c39f9417155f.png",
+    "static/media/Screenshot_20230217_010206.png": "/website/static/media/Screenshot_20230217_010206.d568d434bc6252500194.png",
+    "index.html": "/website/index.html",
+    "main.ed1616ad.css.map": "/website/static/css/main.ed1616ad.css.map",
+    "main.47d61146.js.map": "/website/static/js/main.47d61146.js.map",
+    "787.fb771931.chunk.js.map": "/website/static/js/787.fb771931.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.ed1616ad.css",
-    "static/js/main.7968c8da.js"
+    "static/js/main.47d61146.js"
   ]
 }
