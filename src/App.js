@@ -1,6 +1,6 @@
 import React from "react";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
-
+import Footer from "./pages/Footer";
 import "./App.css";
 import Home from "./pages/Home";
 import Portfolio from "./pages/Portfolio";
@@ -12,34 +12,22 @@ import Navbar from "./pages/Navbar"; // Adjust the path if needed
 
 function App() {
   return (
-    <Router>
-      <Navbar />
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/portfolio" element={<Portfolio />} />
-        {/* ... other routes ... */}
-      </Routes>
-    </Router>
+    <div>
+      <Router basename="/website">
+        <Navbar />
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/portfolio" element={<Portfolio />} />
+          <Route path="/resume" element={<Resume />} />
+
+          {/* ... other routes ... */}
+        </Routes>
+      </Router>
+      <div>
+        <Footer />
+      </div>
+    </div>
   );
 }
 
 export default App;
-
-// const App = () => {
-//   return (
-//     <div>
-//       {/* Routing */}
-//       <Router>
-//         <Routes>
-//           <Route path="/" element={<Home />} />
-//           <Route path="/portfolio" element={<Portfolio />} />
-//           <Route path="/resume" element={<Resume />} />
-//           <Route path="/contact" element={<Contact />} />
-//           <Route path="/rocks" element={<Rocks />} />
-//         </Routes>
-//       </Router>
-//     </div>
-//   );
-// };
-
-// // export default App;
