@@ -1,3 +1,6 @@
+@import url("https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,700;1,400&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap"); /* if you want a handwritten look */
+
 @keyframes flickerBG {
   0%,
   100% {
@@ -43,7 +46,7 @@
   text-align: center;
   font-size: 1.2rem;
   font-style: italic;
-  margin-bottom: 3rem;
+  margin-bottom: 4.5rem; /* was 3rem — increase for more spacing */
   opacity: 0.8;
   z-index: 1;
   position: relative;
@@ -320,17 +323,21 @@ button:hover {
 }
 
 .unfinished-blurb {
-  font-family: "Shadows Into Light", cursive; /* Handwritten, clean */
-  font-size: 0.95rem;
-  max-width: 600px;
-  margin: 2rem auto 3rem;
-  line-height: 1.7;
-  color: #463c30;
-  padding: 0 1rem;
+  font-size: 0.9rem;
+  line-height: 1.8;
+  max-width: 750px;
+  margin: 5rem auto 3rem auto;
   opacity: 1;
-  transform: translateY(0);
-  transition: opacity 0.5s ease, transform 0.5s ease;
+  transition: opacity 0.4s ease, transform 0.4s ease;
   text-align: left;
+  padding: 0 2rem;
+}
+
+.unfinished-blurb p {
+  font-family: "Courier New", monospace;
+  font-weight: 600;
+  font-size: 0.9rem;
+  line-height: 1.7;
 }
 
 .unfinished-blurb.visible {

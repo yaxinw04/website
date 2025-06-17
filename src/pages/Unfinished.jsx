@@ -17,16 +17,25 @@ export default function Unfinished() {
   };
 
   // Blurb scroll-fade animation
-  useEffect(() => {
+useEffect(() => {
   const handleScroll = () => {
     if (blurbRef.current) {
-      const blurbTop = blurbRef.current.getBoundingClientRect().top;
-      const windowHeight = window.innerHeight;
-      const scrollRatio = blurbTop / windowHeight;
+      const scrollY = window.scrollY;
+      const pageHeight = document.body.scrollHeight - window.innerHeight;
+      const scrollRatio = scrollY / pageHeight;
 
-      const opacity = Math.max(0, Math.min(1, scrollRatio * 2)); // fade faster
+      // Start fading only after 70% scroll, fully faded by 95%
+      const fadeStart = 0.7;
+      const fadeEnd = 0.95;
+
+      let opacity = 1;
+      if (scrollRatio > fadeStart) {
+        opacity = 1 - (scrollRatio - fadeStart) / (fadeEnd - fadeStart);
+        opacity = Math.max(0, Math.min(opacity, 1));
+      }
+
       blurbRef.current.style.opacity = opacity;
-      blurbRef.current.style.transform = `translateY(${Math.min(40, (1 - opacity) * 60)}px)`;
+      blurbRef.current.style.transform = `translateY(${Math.min(20, (1 - opacity) * 30)}px)`;
     }
   };
 
@@ -50,15 +59,14 @@ export default function Unfinished() {
         <div className="unfinished-blurb" ref={blurbRef}>
           <p>
             <strong>My life is a mosaic of incompletion.</strong><br />
-            Everything I start drifts into something else — a new passion, a new obsession, a new chapter.<br />
-            I used to think that made me scattered, unrooted, a failure at mastery.<br />
-            But looking back, I see how much I’ve lived — how many things I’ve touched, tried, felt, and begun.<br /><br />
-            Maybe the beauty is in the not-finishing. In the becoming.<br />
-            There’s something quietly extraordinary about never calling anything complete —<br />
-            about always reaching, always curious, always becoming more.<br /><br />
-            This is a collection of fragments, flickers, and forgotten corners —<br />
-            not a record of endings,<br />
-            but a celebration of all that remains <em>unfinished</em>.
+            Everything I start drifts into something else<br />
+            I used to think that made me scattered, a failure at mastery.<br />
+            But looking back, I see how much I’ve gotten to experience. How many things I’ve touched, tried, felt, and begun.<br /><br />
+            Maybe the beauty is in the not-finishing. <br />
+            There’s something extraordinary about never calling anything complete. 
+            About always curious, always wanting <i>more</i>.<br /><br />
+            This is a collection of fragments of my messy, incomplete life.<br />
+            a celebration of all that remains <em>unfinished</em>.
           </p>
         </div>
 

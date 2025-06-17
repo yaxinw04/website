@@ -426,3 +426,7 @@ button {
   display: flex;
   align-items: center;
 }
+
+.unfinished-page .navbar {
+  display: none;
+}
