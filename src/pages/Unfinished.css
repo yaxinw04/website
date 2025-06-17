@@ -1,0 +1,24 @@
+.oracle-start {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 50vh;
+}
+
+.oracle-start button,
+.entry button {
+  background-color: #7e6b5a;
+  color: white;
+  font-family: "Work Sans", sans-serif;
+  padding: 0.6rem 1.2rem;
+  font-size: 1rem;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.oracle-start button:hover,
+.entry button:hover {
+  background-color: #a08e78;
+}

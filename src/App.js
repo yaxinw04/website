@@ -8,7 +8,8 @@ import Resume from "./pages/Resume";
 import Contact from "./pages/Contact";
 import Rocks from "./pages/Rocks";
 import ReactTyped from "react-typed";
-import Navbar from "./pages/Navbar"; // Adjust the path if needed
+import Navbar from "./pages/Navbar";
+import Unfinished from "./pages/Unfinished"; // ✅ Add this line
 
 function App() {
   return (
@@ -19,8 +20,9 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/portfolio" element={<Portfolio />} />
           <Route path="/resume" element={<Resume />} />
-
-          {/* ... other routes ... */}
+          <Route path="/unfinished" element={<Unfinished />} />{" "}
+          {/* ✅ New route */}
+          {/* Add other routes as needed */}
         </Routes>
       </Router>
       <div>
