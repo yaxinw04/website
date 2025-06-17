@@ -1,9 +1,21 @@
 import React from "react";
-import { YouTubeVideoEmbed, Gamedesign } from "../bcigaming.js";
+import {
+  YouTubeVideoEmbed,
+  Gamedesign,
+  PromoVid,
+  WoundsAdressed,
+} from "../bcigaming.js";
 import Quoted from "../images/Screenshot_20230217_010206.png";
 import BeaverModel from "../images/beavermodel.js";
 import BeaverDrawing from "../images/Screenshot 2023-09-10 181149.png";
-import { TermTranslator, AutofillEmbed } from "../images/mediform.js";
+import WoundsAdressedPic1 from "../images/wounds adressed.jpg";
+import WoundsAdressedPic2 from "../images/wounds adressed2.jpg";
+import {
+  TermTranslator,
+  AutofillEmbed,
+  DremtDemo,
+  RunwayReady,
+} from "../images/mediform.js";
 import Beamform from "../images/Screenshot_20230217_010345.png";
 
 function Portfolio() {
@@ -17,8 +29,11 @@ function Portfolio() {
         <div className="bcigaming">
           <h3>Watolink BCI Gaming Project (WIP)</h3>
           <div className="video-container">
-            <div className="video">
+            {/* <div className="video">
               <YouTubeVideoEmbed />
+            </div> */}
+            <div className="video">
+              <PromoVid />
             </div>
             <div className="video">
               <Gamedesign />
@@ -27,15 +42,129 @@ function Portfolio() {
 
           <p>
             WATOLINK is the University of Waterloo's neurotechnology student
-            design team. As a co-leader for the BCI (Brain-Computer Interface)
-            gaming project, our team is developing a wild west-themed game from
-            scratch controlled by brain signals. Utilizing an array of tools,
-            including C#, Unity, Python, Figma, and more, our team has worked
-            immesnly hard in creating this unique game. The BCI feature includes
-            the integration of the Neurosity headset, used to detect player
-            blinks. Before gameplay, the headset undergoes a calibration phase
-            tailored to the individual (shown in video). Then every detected
-            blink prints 'BLINK DETECTED' in the terminal.
+            design team. As a{" "}
+            <strong>
+              co-leader for the BCI (Brain-Computer Interface) gaming project
+            </strong>
+            , our team is developing a Wild West-themed game from scratch
+            controlled by brain signals. The BCI feature includes the
+            integration of the Neurosity headset, used to detect player blinks.
+            Our game, <strong>MindFire</strong>, was selected as a{" "}
+            <strong>
+              finalist for the IEEE GameSIG Student game development competition
+            </strong>
+            .
+            <br />
+            <br />
+            <strong>Built with:</strong> C#, Unity, Python, Brainflow, Figma,
+            Canva, Adobe Suite. Most assets made from scratch by team members!
+          </p>
+        </div>
+      </div>
+
+      {/* Wounds adressed */}
+      <div className="projects">
+        <div className="">
+          <h3>Wounds? aDRESSED</h3>
+          <div className="wounds-image">
+            <img
+              src={WoundsAdressedPic1}
+              alt="Wounds adressed in the bandage"
+            />
+            <img src={WoundsAdressedPic2} alt="robotic wearable" />
+          </div>
+          <p>
+            Introducing Wounds? Addressed, a wearable that{" "}
+            <stong>autonomously delivers medical dressing </stong>to the wound
+            inside the bandage. Our robot detects the temperature of the skin
+            surrounding the wound inside the bandage and reapplies dressing as
+            it’s being used up in the healing process.
+            <br />
+            <br />
+            <strong>Built with:</strong> Arduino Uno, BMP280 + AHT22 humidity,
+            temperature, and pressure sensor, step motor, C++
+          </p>
+          <p>
+            <a
+              href="https://devpost.com/software/wounds-addressed"
+              className="link-button"
+            >
+              Devpost Submission
+            </a>
+          </p>
+        </div>
+      </div>
+
+      {/* dREMt */}
+      <div className="projects">
+        <div className="">
+          <h3>dREMt</h3>
+
+          <div className="single-video">
+            <DremtDemo />
+          </div>
+
+          <p>
+            From horoscopes to four-leaf clovers for good luck, we humans love
+            to find a greater meaning behind our experiences. Just as nature
+            holds secrets waiting to be unveiled, our dreams are a canvas of
+            mysteries. What if, in every dream, there lies a message? Our
+            project: dREMt helps decipher those messages!
+            <br />
+            <strong>
+              TechNova 2023 Winners! (Best use of .tech domain category)
+            </strong>
+            <br />
+            <br />
+            <strong>Built with:</strong> React, HTML/CSS, Chat-gpt 3.5 turbo
+            API, Figma. All assets drawn by team members!
+          </p>
+          <p>
+            <a href="https://github.com/yaxinw04/dREMt" className="link-button">
+              View Project Code
+            </a>
+            <a
+              href="https://devpost.com/software/dremt"
+              className="link-button"
+            >
+              Devpost Submission
+            </a>
+          </p>
+        </div>
+      </div>
+
+      {/* runway ready? */}
+      <div className="projects">
+        <div className="">
+          <h3>Runway Ready?!</h3>
+
+          <div className="single-video">
+            <RunwayReady />
+          </div>
+
+          <p>
+            From fashion shows to strutting down downtown Waterloo, you are the
+            main character… Unless… your walk is less of a confident strut but
+            more a hobble . I’ve always wanted to know if my walking/running
+            form is bad, and Runway Ready is here to tell me just that.
+            <br />
+            <br />
+            <strong>Built with:</strong> Swift, JavaScript, HTML/CSS, Node.js,
+            Handlebars.js, express.js
+          </p>
+          <p>
+            <a
+              href="https://github.com/yaxinw04/HTN2023"
+              className="link-button"
+            >
+              View Project Code
+            </a>
+            <a
+              href="https://devpost.com/software/runway-ready?ref_content=my-projects-tab&ref_feature=my_projects"
+              className="link-button"
+            >
+              Devpost Submission
+            </a>
           </p>
         </div>
       </div>
@@ -59,10 +188,10 @@ function Portfolio() {
             the pronouciation of the term. Created using JavaScript, HTML, and
             CSS. Hack the Globe 2023 Submission.
           </p>
+
           <a
             href="https://github.com/yaxinw04/HTGteam20"
-            target="_blank"
-            rel="noopener noreferrer"
+            className="link-button"
           >
             View Project Code
           </a>
@@ -102,10 +231,10 @@ function Portfolio() {
             was developed with Python. Throughout the project, Postman was used
             to test the functionality of the server.
           </p>
+
           <a
             href="https://github.com/yaxinw04/quoted-client"
-            target="_blank"
-            rel="noopener noreferrer"
+            className="link-button"
           >
             View Project Code
           </a>
@@ -125,10 +254,10 @@ function Portfolio() {
             <br />
             Technologies Used: C++
           </p>
+
           <a
             href="https://github.com/yaxinw04/Ultrasound-beamforming-bme121finalproject"
-            target="_blank"
-            rel="noopener noreferrer"
+            className="link-button"
           >
             View Project Code
           </a>

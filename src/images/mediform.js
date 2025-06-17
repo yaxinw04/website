@@ -32,4 +32,36 @@ function TermTranslator() {
   );
 }
 
-export { TermTranslator, AutofillEmbed };
+function DremtDemo() {
+  return (
+    <div>
+      <iframe
+        width="560"
+        height="315"
+        src="https://www.youtube.com/embed/bz4mTliXubI?si=5WDsXjpMOVQgPtgg"
+        title="YouTube video player"
+        frameborder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+        allowfullscreen
+      ></iframe>
+    </div>
+  );
+}
+
+function RunwayReady() {
+  return (
+    <div>
+      <iframe
+        width="560"
+        height="315"
+        src="https://www.youtube.com/embed/mbha9Ve51iU?si=C8Jp9Kx4p5LUSXPF"
+        title="YouTube video player"
+        frameborder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+        allowfullscreen
+      ></iframe>
+    </div>
+  );
+}
+
+export { TermTranslator, AutofillEmbed, DremtDemo, RunwayReady };
