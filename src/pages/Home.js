@@ -112,7 +112,8 @@ function Home() {
         <Link to="/">Home</Link>
         <Link to="/portfolio">Portfolio</Link>
         <Link to="/resume">Resume</Link>
-        <Link to="/rocks">Rocks!</Link>
+        <Link to="/unfinished">Unfinished</Link>
+
         {/* ... other links ... */}
       </nav>
     </div>

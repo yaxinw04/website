@@ -6,10 +6,9 @@ import Home from "./pages/Home";
 import Portfolio from "./pages/Portfolio";
 import Resume from "./pages/Resume";
 import Contact from "./pages/Contact";
-import Rocks from "./pages/Rocks";
 import ReactTyped from "react-typed";
 import Navbar from "./pages/Navbar";
-import Unfinished from "./pages/Unfinished"; // ✅ Add this line
+import Unfinished from "./pages/Unfinished";
 
 function App() {
   return (

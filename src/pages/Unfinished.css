@@ -1,24 +1,339 @@
-.oracle-start {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 50vh;
+@keyframes flickerBG {
+  0%,
+  100% {
+    filter: brightness(1);
+  }
+  50% {
+    filter: brightness(0.97) contrast(0.98);
+  }
 }
 
-.oracle-start button,
-.entry button {
-  background-color: #7e6b5a;
-  color: white;
-  font-family: "Work Sans", sans-serif;
-  padding: 0.6rem 1.2rem;
+/* Main page */
+.unfinished-page {
+  background-color: #f6f1e7;
+  color: #2e2e2e;
+  font-family: "Cormorant Garamond", sans-serif;
+  min-height: 100vh;
+  padding-top: 5rem;
+  position: relative;
+  overflow-x: hidden;
+  animation: flickerBG 15s infinite ease-in-out;
+}
+
+/* Grain overlay */
+.unfinished-page::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: repeating-radial-gradient(
+    circle,
+    rgba(0, 0, 0, 0.02) 1px,
+    transparent 3px
+  );
+  opacity: 0.4;
+  z-index: 0;
+  pointer-events: none;
+}
+
+/* Header + Tagline */
+.tagline {
+  text-align: center;
+  font-size: 1.2rem;
+  font-style: italic;
+  margin-bottom: 3rem;
+  opacity: 0.8;
+  z-index: 1;
+  position: relative;
+}
+
+/* Entry styling */
+.entry {
+  background: #fffdf7;
+  border: 1px solid #d8cfc2;
+  padding: 2rem;
+  margin: 3rem auto;
+  width: 85%;
+  max-width: 700px;
+  box-shadow: -8px 8px 0 rgba(212, 192, 161, 0.7);
+  transform: rotate(-0.5deg);
+  z-index: 1;
+  position: relative;
+}
+
+/* Text content */
+.entry h2 {
+  font-family: "Georgia", serif;
+  font-size: 1.8rem;
+  margin-bottom: 0.5rem;
+}
+
+.entry p,
+.entry blockquote {
+  line-height: 1.6;
   font-size: 1rem;
-  border: none;
-  border-radius: 6px;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
+  color: #3a3a3a;
+  margin-top: 1rem;
+  font-style: italic;
 }
 
-.oracle-start button:hover,
-.entry button:hover {
-  background-color: #a08e78;
+/* Media */
+.entry img,
+.entry video {
+  max-width: 100%;
+  border-radius: 8px;
+  margin-top: 1rem;
+  box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.08);
+}
+
+/* Button style */
+button {
+  background-color: #e7dfd1;
+  border: 1px solid #c2b9ad;
+  color: #3a322a;
+  padding: 0.6rem 1.3rem;
+  font-family: "Cormorant Garamond", serif;
+  font-size: 1rem;
+  text-transform: lowercase;
+  letter-spacing: 0.5px;
+  cursor: pointer;
+  box-shadow: 1px 1px 0 #c2b9ad;
+  transition: all 0.2s ease-in-out;
+  border-radius: 2px;
+}
+
+button:hover {
+  background-color: #dcd4c6;
+  box-shadow: none;
+  transform: translateY(-1px);
+}
+
+/* Navbar override */
+.unfinished-navbar {
+  position: absolute;
+  top: 1rem;
+  left: 1.5rem;
+  z-index: 5;
+  font-family: "Courier New", monospace;
+  font-size: 0.9rem;
+}
+
+.unfinished-link {
+  color: #6d5e4b;
+  text-decoration: none;
+  background: #e8dcc7;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  box-shadow: 1px 1px 0 #aaa;
+}
+
+.unfinished-logo {
+  font-weight: bold;
+  color: #493e34;
+  margin-bottom: 0.5rem;
+}
+
+.entry-button-container {
+  margin-top: 2rem;
+  text-align: center;
+}
+
+.entry-button-container button {
+  margin: 0 auto;
+  display: inline-block;
+}
+
+/*decoration*/
+/* "Tape" corner effect using pseudo-elements */
+.entry::before,
+.entry::after {
+  content: "";
+  position: absolute;
+  width: 60px;
+  height: 20px;
+  background-color: #d8d0c4;
+  opacity: 0.6;
+  z-index: 2;
+  transform: rotate(-5deg);
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+.entry::before {
+  top: -10px;
+  left: -10px;
+}
+
+.entry::after {
+  top: -10px;
+  right: -10px;
+  transform: rotate(5deg);
+}
+
+/* Final background texture + coffee stain ring */
+.unfinished-page::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 0;
+  pointer-events: none;
+
+  background-image: radial-gradient(
+      circle,
+      rgba(0, 0, 0, 0.025) 1px,
+      transparent 1px
+    ),
+    radial-gradient(
+      circle at 75% 60%,
+      rgba(84, 56, 34, 0.15) 40px,
+      transparent 60px
+    ),
+    radial-gradient(
+      circle at 30% 80%,
+      rgba(84, 56, 34, 0.08) 25px,
+      transparent 45px
+    );
+
+  background-size: 6px 6px, auto, auto;
+  background-repeat: repeat, no-repeat, no-repeat;
+  mix-blend-mode: multiply;
+  opacity: 0.6;
+}
+
+/* Tape corners (not too many duplicates) */
+.entry::before,
+.entry::after {
+  content: "";
+  position: absolute;
+  width: 100px;
+  height: 30px;
+  background-color: #d6cdb9;
+  opacity: 0.6;
+  z-index: 2;
+  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.entry::before {
+  top: -20px;
+  left: -20px;
+  transform: rotate(-6deg);
+}
+
+.entry::after {
+  top: -20px;
+  right: -20px;
+  transform: rotate(7deg);
+}
+
+.unfinished-page::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+
+  background-image:
+    /* softened vertical fold */ linear-gradient(
+      to right,
+      rgba(90, 75, 60, 0.035) 49%,
+      transparent 50%,
+      rgba(90, 75, 60, 0.035) 51%
+    ),
+    /* softened horizontal fold */
+      linear-gradient(
+        to bottom,
+        rgba(90, 75, 60, 0.03) 49%,
+        transparent 50%,
+        rgba(90, 75, 60, 0.03) 51%
+      ),
+    /* coffee ring - slightly lighter */
+      radial-gradient(
+        circle at 70% 60%,
+        rgba(130, 100, 60, 0.12) 45px,
+        transparent 70px
+      ),
+    /* second ring */
+      radial-gradient(
+        circle at 30% 80%,
+        rgba(130, 100, 60, 0.08) 35px,
+        transparent 60px
+      ),
+    /* crease lines */
+      linear-gradient(
+        135deg,
+        rgba(90, 70, 55, 0.04) 0%,
+        transparent 20%,
+        rgba(90, 70, 55, 0.04) 40%,
+        transparent 60%
+      ),
+    /* fine paper grain */
+      repeating-linear-gradient(
+        45deg,
+        rgba(60, 40, 20, 0.01) 0px,
+        transparent 4px
+      );
+
+  background-repeat: no-repeat, no-repeat, no-repeat, no-repeat, no-repeat,
+    repeat;
+  background-size: 100% 100%, 100% 100%, auto, auto, 100% 100%, 6px 6px;
+  mix-blend-mode: multiply;
+  opacity: 0.75; /* slightly reduced from 0.9 */
+}
+
+.unfinished-page::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+
+  background-image:
+    /* burn mark */ radial-gradient(
+      circle at 10% 85%,
+      rgba(20, 10, 5, 0.25) 35px,
+      transparent 70px
+    ),
+    /* watermark pattern */
+      repeating-linear-gradient(
+        90deg,
+        rgba(0, 0, 0, 0.01) 0px,
+        rgba(0, 0, 0, 0.03) 20px,
+        transparent 40px
+      ),
+    /* faded ink smudge */
+      radial-gradient(
+        circle at 90% 10%,
+        rgba(0, 0, 0, 0.08) 20px,
+        transparent 50px
+      );
+
+  background-repeat: no-repeat, repeat, no-repeat;
+  background-size: auto, 100% 100%, auto;
+  mix-blend-mode: multiply;
+  opacity: 0.6;
+
+  animation: dustFloat 60s linear infinite;
+}
+
+.unfinished-blurb {
+  font-family: "Shadows Into Light", cursive; /* Handwritten, clean */
+  font-size: 0.95rem;
+  max-width: 600px;
+  margin: 2rem auto 3rem;
+  line-height: 1.7;
+  color: #463c30;
+  padding: 0 1rem;
+  opacity: 1;
+  transform: translateY(0);
+  transition: opacity 0.5s ease, transform 0.5s ease;
+  text-align: left;
+}
+
+.unfinished-blurb.visible {
+  opacity: 1;
+  transform: translateY(0);
 }
