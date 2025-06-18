@@ -46,21 +46,23 @@ useEffect(() => {
 
   return (
     <div className="unfinished-page">
-      <nav className="unfinished-navbar">
-        <div className="unfinished-logo" style={{ textAlign: 'center', width: '100%' }}>
-          unfinished
-        </div>
-        <a className="unfinished-link" href="/website">↩ return</a>
-      </nav>
+        <div className="unfinished-top-banner"></div>
+        <nav className="unfinished-navbar">
+            <div className="unfinished-navbar-inner">
+                <span className="unfinished-logo-typewriter">unfinished</span>
+                <a className="unfinished-link" href="/website">↩ return</a>
+            </div>
+        </nav>
+
 
       <div className="unfinished-container">
 
         {/* Blurb */}
         <div className="unfinished-blurb" ref={blurbRef}>
           <p>
-            <strong>My life is a mosaic of incompletion.</strong><br />
+            <strong>My life is a mosaic of incompletion.</strong><br /><br />
             Everything I start drifts into something else<br />
-            I used to think that made me scattered, a failure at mastery.<br />
+            I used to think that made me scattered; a failure at mastery.<br />
             But looking back, I see how much I’ve gotten to experience. How many things I’ve touched, tried, felt, and begun.<br /><br />
             Maybe the beauty is in the not-finishing. <br />
             There’s something extraordinary about never calling anything complete. 
@@ -101,6 +103,7 @@ useEffect(() => {
           </div>
         )}
       </div>
+        <div className="unfinished-bottom-banner"></div>
     </div>
   );
 }

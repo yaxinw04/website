@@ -13,14 +13,32 @@
 
 /* Main page */
 .unfinished-page {
-  background-color: #f6f1e7;
-  color: #2e2e2e;
+  background-color: #f6f1e7 !important;
+  /* color: #2e2e2e; */
   font-family: "Cormorant Garamond", sans-serif;
   min-height: 100vh;
   padding-top: 5rem;
   position: relative;
+  z-index: 0;
   overflow-x: hidden;
   animation: flickerBG 15s infinite ease-in-out;
+}
+
+.unfinished-top-banner,
+.unfinished-bottom-banner {
+  display: none;
+}
+
+.unfinished-container {
+  position: relative;
+  min-height: 100vh; /* Make sure it takes full screen height */
+  background-color: #fefcf7;
+  padding: 6rem 0 6rem 0;
+  background-image: url("//media/unfinished-bg.jpg");
+  background-repeat: repeat;
+  background-size: cover; /* or try contain if repeating */
+  background-position: center top;
+  background-attachment: fixed;
 }
 
 /* Grain overlay */
@@ -37,19 +55,18 @@
     transparent 3px
   );
   opacity: 0.4;
-  z-index: 0;
+  z-index: -1; /* ensures it's behind all content */
   pointer-events: none;
 }
 
 /* Header + Tagline */
 .tagline {
+  margin-top: 6rem; /* increase spacing below the blurb */
+  margin-bottom: 6rem; /* spacing above the entry or button */
   text-align: center;
-  font-size: 1.2rem;
+  font-size: 1.1rem;
   font-style: italic;
-  margin-bottom: 4.5rem; /* was 3rem — increase for more spacing */
-  opacity: 0.8;
-  z-index: 1;
-  position: relative;
+  color: #4e4e4e;
 }
 
 /* Entry styling */
@@ -66,6 +83,10 @@
   position: relative;
 }
 
+.entry * {
+  font-weight: 400 !important;
+}
+
 /* Text content */
 .entry h2 {
   font-family: "Georgia", serif;
@@ -80,6 +101,7 @@
   color: #3a3a3a;
   margin-top: 1rem;
   font-style: italic;
+  font-weight: 400 !important; /* Normal weight */
 }
 
 /* Media */
@@ -115,27 +137,79 @@ button:hover {
 
 /* Navbar override */
 .unfinished-navbar {
-  position: absolute;
-  top: 1rem;
-  left: 1.5rem;
-  z-index: 5;
-  font-family: "Courier New", monospace;
-  font-size: 0.9rem;
+  width: 100%;
+  padding: 2rem 2rem;
+  background: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1.5rem;
+  position: relative;
+  z-index: 10;
+}
+
+.unfinished-navbar-inner {
+  display: flex;
+  /* justify-content: space-between; ensures space between title and button */
+  align-items: center;
+  max-width: 1000px; /* keeps layout clean */
+  margin: 0 auto;
+  padding: 0 1rem; /* horizontal padding */
 }
 
 .unfinished-link {
-  color: #6d5e4b;
+  font-family: "Cormorant Garamond", serif;
+  font-size: 1.1rem;
+  color: #3e2c1c; /* dark brown text */
   text-decoration: none;
-  background: #e8dcc7;
-  padding: 0.5rem 1rem;
+  background-color: #f5e7d2; /* parchment beige */
+  padding: 8px 16px;
+  border: 1.5px solid #d0bfa3; /* light brown border */
   border-radius: 4px;
-  box-shadow: 1px 1px 0 #aaa;
+  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
 }
 
-.unfinished-logo {
-  font-weight: bold;
-  color: #493e34;
-  margin-bottom: 0.5rem;
+.unfinished-link:hover {
+  background-color: #ebdbc2; /* slightly darker beige on hover */
+  color: #2a1b0f; /* deepen text color */
+  box-shadow: 3px 3px 6px rgba(0, 0, 0, 0.15);
+}
+
+.unfinished-logo-container {
+  width: 100%;
+  text-align: center;
+  margin-top: 1rem;
+}
+
+.unfinished-logo-typewriter {
+  font-family: "Courier New", monospace;
+  font-size: 2.5rem;
+  white-space: nowrap;
+  overflow: hidden;
+  border-right: 2px solid #000;
+  display: inline-block;
+  animation: typing 2.5s steps(10, end), blink-caret 0.75s step-end infinite;
+}
+
+/* Typewriter effect */
+@keyframes typing {
+  from {
+    width: 0;
+  }
+  to {
+    width: 10ch;
+  }
+}
+
+@keyframes blink-caret {
+  from,
+  to {
+    border-color: transparent;
+  }
+  50% {
+    border-color: black;
+  }
 }
 
 .entry-button-container {
@@ -327,6 +401,7 @@ button:hover {
   line-height: 1.8;
   max-width: 750px;
   margin: 5rem auto 3rem auto;
+  margin-top: 2rem;
   opacity: 1;
   transition: opacity 0.4s ease, transform 0.4s ease;
   text-align: left;
@@ -343,4 +418,8 @@ button:hover {
 .unfinished-blurb.visible {
   opacity: 1;
   transform: translateY(0);
+}
+
+.unfinished-container {
+  padding-bottom: 8rem; /* gives more space at the bottom of the whole page */
 }
