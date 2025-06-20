@@ -1,3 +1,5 @@
+import pepperCouch from "../images/unfinished/pepper-couch2.jpg";
+
 const entries = [
   {
     title: "On Leaving",
@@ -48,6 +50,19 @@ const entries = [
     src: "https://via.placeholder.com/600x350?text=Sketch+Page",
     date: "June 2022",
     tag: "unfinished",
+  },
+
+  {
+    title: "Aging in Snapshots",
+    content: [
+      "I miss my dog the most. I can talk to my parents over the phone. I can text my friends. But with Pepper, there's nothing. Each time I return, I catch a new snapshot: a few more white hairs and a little less energy.",
+      "I wonder if she still likes to sleep on top of the couch backs.",
+    ],
+
+    type: "image",
+    src: pepperCouch,
+    date: "June 2025",
+    tag: "longing",
   },
 ];
 

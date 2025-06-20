@@ -62,11 +62,11 @@ useEffect(() => {
           <p>
             <strong>My life is a mosaic of incompletion.</strong><br /><br />
             Everything I start drifts into something else<br />
-            I used to think that made me scattered; a failure at mastery.<br />
+            I used to think that made me scattered<br />
             But looking back, I see how much I’ve gotten to experience. How many things I’ve touched, tried, felt, and begun.<br /><br />
             Maybe the beauty is in the not-finishing. <br />
-            There’s something extraordinary about never calling anything complete. 
-            About always curious, always wanting <i>more</i>.<br /><br />
+            about never calling anything complete. 
+            about always staying curious, always wanting <i>more</i>.<br /><br />
             This is a collection of fragments of my messy, incomplete life.<br />
             a celebration of all that remains <em>unfinished</em>.
           </p>
@@ -83,13 +83,32 @@ useEffect(() => {
             {currentEntry.type === 'video' && (
               <video controls src={currentEntry.src} />
             )}
-            {currentEntry.type === 'image' && (
-              <img src={currentEntry.src} alt={currentEntry.title} />
-            )}
-            {currentEntry.type === 'text' && (
-              <blockquote>{currentEntry.content}</blockquote>
-            )}
-            {currentEntry.type !== 'text' && <p>{currentEntry.content}</p>}
+          {currentEntry.type === 'image' && (
+  <div style={{ textAlign: "center" }}>
+    <img
+      src={currentEntry.src}
+      alt={currentEntry.title}
+      style={{
+        width: "90%",
+        maxWidth: "500px",
+        height: "auto",
+        borderRadius: "8px",
+        marginBottom: "1rem",
+        boxShadow: "0 4px 8px rgba(0, 0, 0, 0.1)",
+      }}
+    />
+  </div>
+)}
+
+
+           {currentEntry.type === 'text' ? (
+  <blockquote>{currentEntry.content}</blockquote>
+) : Array.isArray(currentEntry.content) ? (
+  currentEntry.content.map((para, i) => <p key={i}>{para}</p>)
+) : (
+  <p>{currentEntry.content}</p>
+)}
+
 
             <div className="entry-button-container">
               <button onClick={getRandomEntry}>Tell me another</button>
@@ -97,7 +116,7 @@ useEffect(() => {
           </section>
         ) : (
           <div className="oracle-start">
-            <button onClick={getRandomEntry}>
+            <button className="unfinished-random-button" onClick={getRandomEntry}>
               Tell me something I don't remember
             </button>
           </div>

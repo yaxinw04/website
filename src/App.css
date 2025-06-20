@@ -452,3 +452,10 @@ button {
   font-family: "Cormorant Garamond", serif !important;
   font-weight: 600 !important; /* or try 700 if still too light */
 }
+
+.unfinished-page .entry * {
+  font-weight: 400 !important;
+}
+.unfinished-page .entry h2 {
+  font-weight: 600 !important; /* keep heading bold */
+}
